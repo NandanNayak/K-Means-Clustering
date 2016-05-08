@@ -99,7 +99,7 @@ The command to execute is:
 
 ###Find the sample output in:
 
-sampleOutput.txt
+<a href="https://github.com/NandanNayak/K-Means-Clustering/blob/master/sampleOutput.txt">sampleOutput.txt</a>
 
 Eg.
 <em>
