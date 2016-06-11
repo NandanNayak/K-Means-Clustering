@@ -1,6 +1,7 @@
 #Import all Modules
 import sys
 import math
+import matplotlib.pyplot as plt
 
 #Take all arguments
 dataFile=sys.argv[1] #Input Data file
@@ -14,6 +15,10 @@ category=4
 isPrint=False
 main=0
 func=1
+sepal=0
+petal=2
+catList=[]
+myNewDict={}
 
 
 
@@ -128,7 +133,7 @@ def getWrongClusterCount(myDict):
     count=0
     tempVal=0
     tempDict={}
-    myNewDict={}
+ #   myNewDict={}
     for key in myDict:
         tempDict=resetDict(tempDict,func)
         for eachList in myDict[key]:
@@ -152,6 +157,41 @@ def getCat(inDict):
         tempList.append(key)
     return tempList
         
+
+def scatterPlot(inDict,color,feature) :
+    L=[]
+    W=[]
+    count=0
+    maxL=maxW=0
+    for key in catList:
+        L=[]
+        W=[]
+        for eachList in myDict[myNewDict[key]]:
+            L.append(eachList[0+feature])
+            W.append(eachList[1+feature])
+        if maxL<max(L):
+            maxL=max(L)
+        if maxW<max(W):
+            maxW=max(W)
+        #print "maxL:%f maxW:%f"%(maxL,maxW)
+        if count==0:
+            plt.scatter (L,W,color="r")
+            
+        elif count==1:
+            plt.scatter(L,W,color="g")
+            
+        else:
+            plt.scatter(L,W,color="b")
+            
+        count+=1
+    plt.text(maxL+0.35,maxW-1.25,"Red : %s"%catList[0],bbox=dict(boxstyle="round",color="pink"))
+    plt.text(maxL+0.35,maxW-1.5,"Green : %s"%catList[1],bbox=dict(boxstyle="round",color="pink"))
+    plt.text(maxL+0.35,maxW-1.75,"Blue : %s"%catList[2],bbox=dict(boxstyle="round",color="pink"))
+    
+    if feature==sepal:
+        plt.title("Sepal Length vs. Sepal Width")
+    else:
+        plt.title("Petal Length vs. Petal Width")
     
 
 if __name__=="__main__":
@@ -212,7 +252,16 @@ if __name__=="__main__":
     
     print "Number of points assigned to wrong cluster:"   #Print the no. of points assigned to wrong cluster
     print wrongCluster
-           
 
+##    print
+##    print catList
+##    print
+##    print myDict
+    plt.subplot(2,1,1)
+    scatterPlot(myDict,sepal,sepal)
+    plt.subplot(2,1,2)
+    scatterPlot(myDict,petal,petal)
+    plt.show()
+    
     myFile.close()
     myFileIP.close()
