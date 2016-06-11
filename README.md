@@ -122,7 +122,7 @@ Cluster Iris-versicolor
 Number of points assigned to wrong cluster:
 2</em>
 
-<strong>Visualization</strong>
+###Visualization
 <img src="https://github.com/NandanNayak/K-Means-Clustering/blob/master/IrisClusters.png" align="center" />
 
 
