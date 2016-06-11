@@ -115,20 +115,15 @@ Cluster Iris-versicolor
 
 [5.7, 3.0, 4.2, 1.2, 'Iris-versicolor']
 
-[5.7, 2.9, 4.2, 1.3, 'Iris-versicolor']
-
-[6.2, 2.9, 4.3, 1.3, 'Iris-versicolor']
-
-[5.1, 2.5, 3.0, 1.1, 'Iris-versicolor']
-
-[5.7, 2.8, 4.1, 1.3, 'Iris-versicolor']
-
 [5.8, 2.7, 5.1, 1.9, 'Iris-virginica']
 
 [4.9, 2.5, 4.5, 1.7, 'Iris-virginica']
 
 Number of points assigned to wrong cluster:
 2</em>
+
+<strong>Visualization</strong>
+<img src="https://github.com/NandanNayak/K-Means-Clustering/blob/master/IrisClusters.png" align="center" />
 
 
 
